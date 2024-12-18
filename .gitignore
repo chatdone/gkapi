@@ -1,0 +1,24 @@
+.DS_Store
+node_modules/
+npm-debug.log
+.vscode/
+build
+.env
+emailed.txt
+logs.txt
+flow-typed/
+package.lock.json
+scripts/enoch
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+yarn-error.log
+dist
+.env.*
+coverage
+deploy.sh
+
+
+user-scripts
+*.swp

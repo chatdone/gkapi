@@ -135,7 +135,7 @@
     "test:precommit": "jest --config=jest.config.precommit.js",
     "test:watch": "jest --watch",
     "test:integration": "GK_ENVIRONMENT=test jest test --config=./src/__tests__/integration/jest-integration.config.js --onlyChanged ",
-    "build": "doppler run -- yarn dist",
+    "build": "yarn dist",
     "dist": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "prepare": "is-ci || husky install",
     "postinstall": "is-ci || husky install",
