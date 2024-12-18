@@ -1,7 +1,7 @@
 {
   "name": "dashboard-api-new",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "index.js",
   "repository": "git@github.com:GoKudos/dashboard-api-new.git",
   "author": "Enoch <enoch@6biz.ai>",
   "license": "MIT",
