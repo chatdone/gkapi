@@ -135,7 +135,7 @@
     "test:precommit": "jest --config=jest.config.precommit.js",
     "test:watch": "jest --watch",
     "test:integration": "GK_ENVIRONMENT=test jest test --config=./src/__tests__/integration/jest-integration.config.js --onlyChanged ",
-    "build": "vite build",
+    "build": "npm build",
     "dist": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "prepare": "husky install",
     "postinstall": "husky install",
