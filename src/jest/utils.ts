@@ -1,0 +1,17 @@
+import stripe from 'stripe';
+const getAuthToken = (): string => {
+  const token =
+    'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InFIVFFmNlV2akVTMEk3LXQ5czVYVSJ9.eyJuaWNrbmFtZSI6ImVub2NoIiwibmFtZSI6ImVub2NoQDZiaXouYWkiLCJwaWN0dXJlIjoiaHR0cHM6Ly9zLmdyYXZhdGFyLmNvbS9hdmF0YXIvNDQ3YmYxZDE5NTJkMTJkNDY3NjNiNzM4YjgyMmJjMDQ_cz00ODAmcj1wZyZkPWh0dHBzJTNBJTJGJTJGY2RuLmF1dGgwLmNvbSUyRmF2YXRhcnMlMkZlbi5wbmciLCJ1cGRhdGVkX2F0IjoiMjAyMS0xMS0yNFQwNjo1Nzo1MC44MjdaIiwiZW1haWwiOiJlbm9jaEA2Yml6LmFpIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImlzcyI6Imh0dHBzOi8vYXV0aC5nb2t1ZG9zLmlvLyIsInN1YiI6ImF1dGgwfDYxOGE2YzRlMmMwNmJhMDA2YmM1NDdjMyIsImF1ZCI6InpqaXplYkhWNkRpRnJKNkdLWHR6T29KcDNiS0p2U0RmIiwiaWF0IjoxNjM3NzM3MDc0LCJleHAiOjE2MzgwOTcwNzQsImF0X2hhc2giOiJDRlJlTW1HZG5FajFJMExEVDhnV0V3Iiwibm9uY2UiOiJKenZ5X01LZmRTMnJYTUhPTDVMUmdvVjhkRDlTYmdZbCJ9.Y2kIZujrXZEHN8NydxBvd-3si_FsoiVfyrPhPDEN-RR8Z1y_3zqZmJehBVKHTaVvZLMYlgtYiLLSmYkygRRhV2SpTmBr9nffxWOAQBfd-ckrMnHfu5EUG7zkt7N5dB875EDznROh04EukYIw9kQ4XkA93WqTacXBiib4H_MFhq-zGnlqVCvksDTH30hIgO5XzPJgM1VG8yDb96aBJccyOtq8Q3vqaSxtJEY-wfIYbjiULUo0ea8BfcwyJjdJ6EY8p0mXSR5ZhQp-Yxqs_xkl5k4efLZ_jubWR_GZooLuQhJiz6dgYrJj4Pmp7Fry6cL7CE_o_xxfYCuE2py-HW8t3Q';
+  return token;
+};
+
+const getMockStripeSignature = (payload: unknown): string => {
+  // @ts-ignore
+  const header = stripe.webhooks.generateTestHeaderString({
+    payload,
+    secret: process.env.STRIPE_END_POINT_SECRET,
+  });
+  return header;
+};
+
+export { getAuthToken, getMockStripeSignature };

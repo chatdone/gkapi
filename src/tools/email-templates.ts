@@ -1,0 +1,52 @@
+export const FORGOT_PASSWORD_EMAIL = 'd-f1e27fe77ecd405fab5e474ce2f2eba5';
+export const VERIFY_EMAIL = 'd-b6d60fbd52874070b9f6bf54c9cbafb5';
+export const MEMBER_RECEIVE_TASK_COMMENT = 'd-7682761d7c5740e6a0a4e56e9c99742f';
+export const NOTIFY_ON_TASK_COMMENT_COLLAB =
+  'd-803bf7beeb694d608fbfa1e4e46ac92c';
+export const NOTIFY_ON_TASK_COMMENT_SHARED =
+  'd-8b8dc4543344417e94cbeb0ba46d4aa5';
+export const PIC_RECEIVE_TASK_COMMENT = 'd-7682761d7c5740e6a0a4e56e9c99742f';
+export const TASK_REMINDER_PIC = 'd-071f720a8c4542bd8d76094387767f24';
+export const TASK_ON_DUE_PIC = 'd-1ecddf5abb824c3ead7c29f88f494505';
+export const TASK_OVERDUE_PIC = 'd-37989717e1e046218711ad6633f8bd90';
+export const TASK_ON_DUE_MEMBER = 'd-e7ecdc5e389447c086f0de59ad1e2579';
+export const TASK_REMINDER_MEMBER = 'd-d7987476f461476c97b5f7305988aab5';
+export const TASK_OVERDUE_MEMBER = 'd-cf5665829b9b41c791fa3621fb092854';
+
+export const BILLING_INVOICE_SENT = 'd-c10bc302e061413ebee267d92ef0974e';
+
+// export const PIC_UPLOAD_DOCUMENT = 'd-53ccb87fd3dd451a85c7557067434954';
+export const PIC_UPLOAD_DOCUMENT = 'd-53ccb87fd3dd451a85c7557067434954';
+// export const ASSIGN_MEMBER_TO_TASK = 'd-069e9186a1764dff8888f1e6635f160f';
+export const ASSIGN_MEMBER_TO_TASK = 'd-29a2244300d7486eaa4c016f8ee0154d';
+export const ASSIGN_WATCHER_TO_TASK = 'd-a9c5461b56724cbda13ec471bcd13328';
+// export const ASSIGN_PIC_TO_TASK = 'd-7371d913538d49cd9cfc9f7a1bd8ba12';
+export const ASSIGN_PIC_TO_TASK = 'd-fcf7b90e30374f90ac73a22fade4f7b2';
+export const REMOVE_MEMBER_FROM_COMPANY = 'd-5844b90d4423497db090a0cb4c57531f';
+export const REMOVE_MEMBER_FROM_TEAM = 'd-b6ab5a54b7c2442da26b14a6dd1f5031';
+export const ASSIGN_MEMBER_TO_TEAM = 'd-31bd33fde7db4c3fa0f3f84f05efc2f4';
+export const ASSIGN_MEMBER_TO_COMPANY = 'd-7281ac2b129144de84fcbd1ab9a4f96a';
+export const CONTACT_US = 'd-e482d7460c994d539dcd0ccab8fcb671';
+export const COLLECTION_CREATED = 'd-7926aeaecaa942c2be8257785cdc95ab';
+export const COLLECTION_ON_DUE = 'd-64c24741c74b4c8cb1aa750e93b0bfd9';
+export const COLLECTION_OVERDUE = 'd-da07ad5778d34a9aabaef2b4e7db2203';
+export const COLLECTION_PAYMENT_REJECTED = 'd-ec84b8bd9f704623aa8f0d0d287a2ff3';
+export const COLLECTION_PAYMENT_ACCEPT = 'd-fb8929aa3cb2458c86806854939371ff';
+
+export const QUOTA_EXCEEDED = 'd-516c2159c12e42c4ae4b8c86069bcde9';
+export const PAYMENT_PROOF_UPLOADED = 'd-b4e889aeb67447d3a569e263ed0a6c4a';
+export const NOTIFY_ON_TASK_COMMENT = 'd-7682761d7c5740e6a0a4e56e9c99742f';
+
+export const SENANGPAY_ACTIVATION = 'd-ea46afcea31c4defbdf4dff8d26fcdb0';
+export const SENANGPAY_TRANSACTION_FULL = 'd-342d9079fef141d789892bdb4fed6f77';
+export const SENANGPAY_TRANSACTION_RECURRING =
+  'd-0197a6ba41c2474aa72c9abaf29ac9d2';
+export const FPX_TRANSACTION_STATUS = 'd-8fb3f61c1aaf43c4853359fbc9e2a1d9';
+export const DEDOCO_REQUEST_SIGNATURE = 'd-967dc7cd46f9420190ae5255ce0bec25';
+export const LOW_QUOTA = 'd-4ee2f722eacb41e7b02b9dd432443c6d';
+export const TASK_DELETED = 'd-8d227ec3979043e290be5e7f80abc396';
+export const BOARD_DELETED = 'd-c38f7fd1522a48898ef1b2c1c0631298';
+export const TASK_INVOICE = 'd-0ad7291683b248c0a4a2b282c23691e8';
+
+export const SUBSCRIPTION_SUCCESS = 'd-de1ab211ec5842d18e3924231489e92c';
+export const SUBSCRIPTION_FAILED = 'd-fc91ebe7668d4847a50349ea5b3a3557';

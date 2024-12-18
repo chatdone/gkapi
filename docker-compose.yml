@@ -1,0 +1,32 @@
+services:
+  cache:
+    container_name: gk-cache
+    image: redis:7.0-alpine
+    ports:
+      - '6379:6379'
+  dev-db:
+    container_name: gk-local-db
+    build: .
+    image: mysql/mysql-server:5.7.33
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_DATABASE: 'sbiz-dev'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'pass'
+  test-db:
+    container_name: gk-test-db
+    build: .
+    image: mysql/mysql-server:5.7.33
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - '5432:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_DATABASE: 'sbiz-test'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'pass'

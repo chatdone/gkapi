@@ -1,0 +1,158 @@
+overwrite: true
+schema: 'src/graphql/modules/**/*.ts'
+documents: null
+generates:
+  src/generated/graphql-types.ts:
+    config:
+      useIndexSignature: true
+      mappers:
+        Contact: '../graphql/models/contact.model#ContactModel'
+        ContactGroup: '../graphql/models/contact.model#ContactGroupModel'
+        ContactPic: '../graphql/models/contact.model#ContactPicModel'
+        ContactTask: '../graphql/models/contact.model#ContactTaskModel'
+        ContactActivityRaw: '../graphql/models/contact.model#ContactActivitiesModel'
+        ContactNote: '../graphql/models/contact.model#ContactNoteModel'
+        CreateContactResponse: '../graphql/models/contact.model#CreateContactResponse'
+        UpdateContactResponse: '../graphql/models/contact.model#UpdateContactResponse'
+        Company: '../graphql/models/company.model#CompanyModel'
+        CompanyMember: '../graphql/models/company.model#CompanyMemberModel'
+        CompanyTeam: '../graphql/models/company.model#CompanyTeamModel'
+        CompanyTeamStatus: '../graphql/models/company.model#CompanyTeamStatusModel'
+        CompanyMemberReferenceImage: '../graphql/models/company.model#CompanyMemberReferenceImageModel'
+        CompanyWorkDaySetting: '../graphql/models/company.model#CompanyWorkDaySettingModel'
+        ServiceHistory: '../graphql/models/company.model#CompanyServiceHistoryModel'
+        User: '../graphql/models/user.model#UserModel'
+        Task: '../graphql/models/task.model#TaskModel'
+        TaskBoard: '../graphql/models/task.model#TaskBoardModel'
+        TaskBoardOwner: '../graphql/models/task.model#TaskBoardOwnerModel'
+        TaskBoardFolder: '../graphql/models/task.model#TaskBoardFolderModel'
+        TaskBoardVisibility: '../graphql/models/task.model#TaskBoardVisibilityModel'
+        Workspace: '../graphql/models/workspace.model#WorkspaceModel'
+        ProjectGroupCustomAttribute: '../graphql/models/workspace.model#ProjectGroupCustomAttributeModel'
+        ProjectGroupCustomColumn: '../graphql/models/workspace.model#ProjectGroupCustomColumnModel'
+        TaskCustomValue: '../graphql/models/workspace.model#TaskCustomValueModel'
+        ProjectTemplateGallery: '../graphql/models/workspace.model#ProjectTemplateGalleryModel'
+
+        Notification: '../graphql/models/notification.model#NotificationModel'
+        UserNotification: '../graphql/models/notification.model#UserNotificationModel'
+        Collector: '../graphql/models/collector.model#CollectorModel'
+        CollectorMember: '../graphql/models/collector.model#CollectorMemberModel'
+        Collection: '../graphql/models/collection.model#CollectionModel'
+        CollectionReminderRead: '../graphql/models/collection.model#CollectionReminderReadModel'
+        CollectionPeriod: '../graphql/models/collection.model#CollectionPeriodModel'
+        CollectionPayment: '../graphql/models/collection.model#CollectionPaymentModel'
+        CollectionRemindOnDays: '../graphql/models/collection.model#CollectionRemindOnDaysModel'
+        CollectionMessageLog: '../graphql/models/collection.model#CollectionMessageLogModel'
+        CollectionActivityLog: '../graphql/models/collection.model#CollectionActivityLogModel'
+        TaskComment: '../graphql/models/task.model#TaskCommentModel'
+        TaskMember: '../graphql/models/task.model#TaskMemberModel'
+        TaskPic: '../graphql/models/task.model#TaskPicModel'
+        TaskWatcher: '../graphql/models/task.model#TaskWatcherModel'
+        TaskAttachment: '../graphql/models/task.model#TaskAttachmentModel'
+        TaskBoardTeam: '../graphql/models/task.model#TaskBoardTeamModel'
+        Subtask: '../graphql/models/task.model#SubtaskModel'
+        Checklist: '../graphql/models/task.model#ChecklistModel'
+        TaskActivityItem: '../graphql/models/task.model#TaskActivityItemModel'
+        TaskActivity: '../graphql/models/task.model#TaskActivityModel'
+        TaskTimerEntry: '../graphql/models/task.model#TaskTimerEntryModel'
+        TaskTimerTotal: '../graphql/models/task.model#TaskTimerTotalModel'
+        ProjectInvoice: '../graphql/models/task.model#ProjectInvoiceModel'
+        ProjectClaim: '../graphql/models/task.model#ProjectClaimModel'
+        ProjectTimeCost: '../graphql/models/task.model#ProjectTimeCostModel'
+        ProjectTemplate: '../graphql/models/task.model#ProjectTemplateModel'
+        ProjectSettings: '../graphql/models/task.model#ProjectSettingsModel'
+        ProjectTemplateStatus: '../graphql/models/task.model#ProjectTemplateStatusModel'
+        ProjectStatus: '../graphql/models/task.model#ProjectStatusModel'
+        ProjectGroup: '../graphql/models/task.model#ProjectGroupModel'
+
+        CompanySubscription: '../graphql/models/subscription.model#CompanySubscriptionModel'
+        CompanyMemberPermissionScopeModel: '../graphql/models/subscription.model#CompanyMemberPermissionScopeModel'
+        SubscriptionPackage: '../graphql/models/subscription.model#SubscriptionPackageModel'
+        SubscriptionPackagePrice: '../graphql/models/subscription.model#SubscriptionPackagePriceModel'
+        ShortUrl: '../graphql/models/url.model#ShortUrlModel'
+        BreadcrumbInfo: '../graphql/models/url.model#BreadcrumbInfoModel'
+
+        StripeInvoice: '../graphql/models/subscription.model#StripeInvoice'
+        StripePromoCode: '../graphql/models/subscription.model#StripePromoCodeModel'
+        StripeCoupon: '../graphql/models/subscription.model#StripeCouponModel'
+        SubscriptionPromoCode: '../graphql/models/subscription.model#SubscriptionPromoCodeModel'
+
+        Location: '../graphql/models/location.model#LocationModel'
+        Holiday: '../graphql/models/holiday.model#HolidayModel'
+        CompanyHoliday: '../graphql/models/holiday.model#CompanyHolidayModel'
+        PublicHoliday: '../graphql/models/holiday.model#PublicHolidayModel'
+        FilterOptions: '../graphql/models/filter.model#FilterOptionsModel'
+        Timesheet: '../graphql/models/timesheet.model#TimesheetModel'
+        TimesheetActivity: '../graphql/models/timesheet.model#TimesheetActivityModel'
+        Attendance: '../graphql/models/attendance.model#AttendanceModel'
+        AttendanceVerificationS3Object: '../graphql/models/attendance.model#AttendanceVerificationS3ObjectModel'
+        AttendanceLabel: '../graphql/models/attendance.model#AttendanceLabelModel'
+        ActivityWeekSummary: '../graphql/models/timesheet.model#ActivityTrackerWeeklyModel'
+        MonthlyActivityTracking: '../graphql/models/timesheet.model#ActivityTrackerMonthlyModel'
+        ActivityMonthSummary: '../graphql/models/timesheet.model#ActivityTrackerActualMonthlyModel'
+        ActivityDaySummary: '../graphql/models/timesheet.model#ActivityTrackerDailyModel'
+        AttendanceDaySummary: '../graphql/models/attendance.model#AttendanceDailySummaryModel'
+        AttendanceWeekSummary: '../graphql/models/attendance.model#AttendanceWeeklySummaryModel'
+        AttendanceMonthSummary: '../graphql/models/attendance.model#AttendanceMonthlySummaryModel'
+        AttendanceSettings: '../graphql/models/attendance.model#AttendanceSettingsModel'
+
+        EmployeeType: '../graphql/models/company.model#EmployeeTypeModel'
+        CompanyPermission: '../graphql/models/company.model#CompanyPermissionModel'
+        ResourcePermission: '../graphql/models/company.model#ResourcePermissionModel'
+
+        Template: '../graphql/models/template.model#TemplateModel'
+        TaskTemplate: '../graphql/models/template.model#TaskTemplateModel'
+        TaskTemplateItem: '../graphql/models/template.model#TaskTemplateItemModel'
+        TaskTemplateAttachment: '../graphql/models/template.model#TaskTemplateAttachmentModel'
+        TaskTemplateRecurringSetting: '../graphql/models/template.model#TaskTemplateRecurringSettingModel'
+        Tag: '../graphql/models/tag.model#TagModel'
+        TagGroup: '../graphql/models/tag.model#TagGroupModel'
+        ContactTag: '../graphql/models/tag.model#ContactTagModel'
+        TaskTag: '../graphql/models/tag.model#TaskTagModel'
+        CollectionTag: '../graphql/models/tag.model#CollectionTagModel'
+
+        TaskFilter: '../graphql/models/task.model#TaskFilter'
+        TaskBoardFilter: '../graphql/models/task.model#TaskBoardFilter'
+        TaskSort: '../graphql/models/task.model#TaskSort'
+        TaskBoardSort: '../graphql/models/task.model#TaskBoardSort'
+        PaginationFilter: '../graphql/models/filter.model#PaginationFilter'
+
+        RequestAccountDeletionResponse: '../graphql/models/user.model#RequestAccountDeletionResponse'
+
+        ImageGroup: '../graphql/models/common.model#ImageGroupModel'
+        BillingInvoice: '../graphql/models/billing.model#BillingInvoiceModel'
+        BillingInvoiceItem: '../graphql/models/billing.model#BillingInvoiceItemModel'
+
+        Subscription: '../graphql/models/subscription.model#SubscriptionModel'
+        SubscriptionProduct: '../graphql/models/subscription.model#SubscriptionProductModel'
+        SubscriptionPrice: '../graphql/models/subscription.model#SubscriptionPriceModel'
+        SubscriptionChange: '../graphql/models/subscription.model#SubscriptionChangeModel'
+        CompanyPaymentMethod: '../graphql/models/company.model#CompanyPaymentMethodModel'
+        TimesheetDayApproval: '../graphql/models/timesheet.model#TimesheetDayApprovalModel'
+        CustomTimesheetDayApproval: '../graphql/models/timesheet.model#TimesheetDayCustomApprovalModel'
+
+      enumValues:
+        ContactType: '../graphql/models/contact.model#ContactType'
+        CompanyMemberType: '../graphql/models/common.model#EnumStringToNumberType'
+        ContactTaskStatusType: '../graphql/models/contact.model#ContactTaskStatusType'
+        NotificationType: '../graphql/models/notification.model#NotificationType'
+        TaskBoardVisibility: '../graphql/models/task.model#TaskBoardVisibility'
+        TaskBoardFolderType: '../graphql/models/task.model#TaskBoardFolderType'
+        TaskPriorityType: '../graphql/models/task.model#TaskPriorityType'
+
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'
+      - add:
+          content:
+            - '/* NOTE: THIS IS AN AUTO-GENERATED FILE. DO NOT MODIFY IT DIRECTLY. */'
+            - '/* eslint-disable import/no-unresolved */'
+            - /* eslint-disable @typescript-eslint/ban-types */
+            - /* eslint-disable @typescript-eslint/no-explicit-any */
+            - '// @ts-nocheck'
+
+config:
+  scalars:
+    DateTime: string
+    Date: string
+    Upload: GraphQLUpload
