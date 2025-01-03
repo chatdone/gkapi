@@ -4,6 +4,7 @@ import {
   S3Client,
   GetObjectCommand,
   HeadObjectCommand,
+  ObjectCannedACL,
 } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { fromIni } from '@aws-sdk/credential-providers';
@@ -93,11 +94,14 @@ const putObjectS3File = async ({
   };
 }) => {
   try {
+    const aclValue: ObjectCannedACL | undefined = configs.ACL ? configs.ACL as ObjectCannedACL : undefined;
+
     const command = new PutObjectCommand({
       Bucket: configs.Bucket,
       Key: configs.destinationKey,
       Body: configs.Body,
-      ACL: configs?.ACL || undefined,
+      ACL: aclValue,
+      // ACL: configs?.ACL || undefined,
     });
 
     const res = await s3Client.send(command);

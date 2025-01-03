@@ -66,7 +66,7 @@ const startServer = async () => {
   app.use(graphqlUploadExpress());
   app.use(helmet());
 
-  server.applyMiddleware({ app, path: '/graphql' });
+  server.applyMiddleware({ app: app as any, path: '/graphql' });
 
   if (process.env.NODE_ENV !== 'test') {
     require('@scripts/cronjobs.script');

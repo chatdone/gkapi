@@ -3448,9 +3448,13 @@ const getAttachments = async (input: {
       filePath: invoice,
       isPublicAccess: true,
     });
+    
 
     const buff = _.get(s3Object, 'Body', _.get(s3Object, 'body'));
     const fileType = await mime.lookup(fileName);
+    if (buff === undefined) {
+      throw new Error('Failed to retrieve file buffer from S3 object');
+    }
 
     const attachments = [
       {

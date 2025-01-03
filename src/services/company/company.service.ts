@@ -66,10 +66,13 @@ import logger from '@tools/logger';
 import { companyMemberTypes } from '@data-access/company/company.store';
 import path from 'path';
 import csv from 'csv-parser';
-import { ReadStream } from 'fs';
+// import { ReadStream } from 'fs';
+import * as fs from 'fs';
+// ...
 import { getMemberTypeFromString } from './company.helper';
 import { PACKAGES_TYPES } from '@data-access/subscription/subscription.store';
 import axios from 'axios';
+import { ReadStream } from 'fs';
 
 const validateUserInCompany = async ({
   userId,
@@ -2311,7 +2314,8 @@ const bulkUploadMembers = async ({
       throw new Error('file extension is not csv');
     }
 
-    const readStream = attachment.createReadStream();
+    // const readStream = attachment.createReadStream();
+    const readStream = fs.createReadStream(attachment.filename);
 
     const parsedResults = (await exportFunctions.processFileStream(
       readStream,

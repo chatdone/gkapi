@@ -124,6 +124,7 @@ import { ACTION_TYPES } from '@services/event-manager/event-manager.constants';
 import { TASK_INVOICE } from '@tools/email-templates';
 import { processFileStream } from '@utils/file.util';
 import { TASK_KANBAN_POSITION_BUFFER } from '@constants';
+import * as fs from 'fs';
 
 type CreateTaskInput = {
   user: UserModel;
@@ -4488,7 +4489,8 @@ type ImportTasksResult = {
 };
 
 const parseImportTaskFile = async (attachment: AttachmentPayload) => {
-  const readStream = attachment.createReadStream();
+  // const readStream = attachment.createReadStream();
+  const readStream = fs.createReadStream(attachment.filename);
   let hasSample = false;
   const results = (await processFileStream(readStream)).filter(
     (p: ParsedImportedTask) => {

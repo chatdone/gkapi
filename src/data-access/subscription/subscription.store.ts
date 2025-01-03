@@ -514,7 +514,6 @@ const incrementSubscriptionQuotas = async ({
   try {
     await knex('company_subscriptions')
       .where('id', subId)
-      // @ts-expect-error
       .increment({
         sms_quota: sms_quota,
         phone_call_quota: phone_quota,

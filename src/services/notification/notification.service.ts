@@ -473,13 +473,33 @@ const notifyQuotaExceededToMembers = async ({
         collectorId: _.get(contact, 'id'),
       });
 
-    const memberIds = _.map(collectorMembers, (each) => {
-      return _.get(each, 'member_id');
-    });
+    const memberIds: (number | null)[] = _.map(collectorMembers, (each) => {
+      const memberId = _.get(each, 'member_id');
+      return memberId === undefined ? null : memberId;
+    }).filter((id) => id !== null);
+
+    const filteredMemberIds = memberIds.filter((id) => id !== undefined) as number[];
 
     const companyMembers = (await loaders.companyMembers.loadMany(
-      memberIds,
+      filteredMemberIds,
     )) as CompanyMemberModel[];
+    // const companyMembers = (await loaders.companyMembers.loadMany(
+    //   memberIds.filter((id) => id !== null), // Add this filter to remove null values
+    // )) as CompanyMemberModel[];
+
+    // const memberIds = _.map(collectorMembers, (each) => {
+    //   const memberId = _.get(each, 'member_id');
+    //   return memberId === undefined ? null : memberId;
+    // }).filter((id) => id !== null);
+
+    // const memberIds = _.map(collectorMembers, (each) => {
+    //   return _.get(each, 'member_id');
+    // });
+
+    // const companyMembers = (await loaders.companyMembers.loadMany(
+    //   memberIds,
+    // )) as CompanyMemberModel[];
+
     const userIds = _.map(companyMembers, (each) => {
       return _.get(each, 'user_id');
     });
@@ -575,9 +595,12 @@ const notifyLowQuotaToMembers = async ({
         collectorId: _.get(contact, 'id'),
       });
 
-    const memberIds = _.map(collectorMembers, (each) => {
+    // const memberIds = _.map(collectorMembers, (each) => {
+    //   return _.get(each, 'member_id');
+    // });
+    const memberIds = _.compact(_.map(collectorMembers, (each) => {
       return _.get(each, 'member_id');
-    });
+    }));
 
     const companyMembers = (await loaders.companyMembers.loadMany(
       memberIds,

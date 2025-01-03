@@ -39,6 +39,7 @@ import _ from 'lodash';
 import path from 'path';
 import csv from 'csv-parser';
 import { ReadStream } from 'fs';
+import * as fs from 'fs';
 import { AUDIT_LOG_TYPES } from '@data-access/contact/utils';
 import { TagModel } from '@models/tag.model';
 import { TableNames } from '@db-tables';
@@ -982,8 +983,8 @@ const bulkUploadContacts = async ({
       throw new Error('file extension is not csv');
     }
 
-    const readStream = attachment.createReadStream();
-
+    // const readStream = attachment.createReadStream();
+const readStream = fs.createReadStream(attachment.filename);
     // FIXME: processFileStream has been extracted to file.util.ts, change this usage to the new function
     const parsedResults = (await exportFunctions.processFileStream(
       readStream,

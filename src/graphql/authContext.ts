@@ -63,7 +63,7 @@ const authContext = async ({ req, ...rest }: { req: Request }) => {
         }
       }
 
-      const roles = _.get(authPayload, 'https://api.gokudos.io/roles') || [];
+      const roles: string[] = _.get(authPayload, 'https://api.gokudos.io/roles') || [];
 
       if (userProfile) {
         const appendedProfile = {

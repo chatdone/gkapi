@@ -3,11 +3,12 @@ import path from 'path';
 import { v4 as uuid } from 'uuid';
 import { createSha3HashFromFile } from './sha3';
 import { AttachmentPayload, ErrorS3 } from '@models/common.model';
-import { ReadStream } from 'fs';
+// import { ReadStream } from 'fs';
 import { CompanyId, CompanyMemberId } from '@models/company.model';
 import { AttendanceStore, CompanyStore } from '@data-access';
 import { AttendanceId } from '@models/attendance.model';
 import { CompanyService, StorageService } from '@services';
+import { ReadStream } from 'fs-capacitor';
 
 dotenv.config();
 
@@ -162,7 +163,7 @@ const getObjectFromS3 = async ({
       destinationPath: filePath,
       isPublicAccess,
     });
-    const BufferBody = await processStream(res?.Body as ReadStream);
+    const BufferBody = await processStream(res?.Body as unknown as ReadStream);
 
     const response = {
       AcceptRanges: res?.AcceptRanges,

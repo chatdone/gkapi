@@ -28,7 +28,7 @@ const login = async (req: Request, res: Response): Promise<Response> => {
     });
 
     const payload = await schema.validateAsync(req.body);
-    const loginResult = await SenangPayService.login(req.ip, payload);
+    const loginResult = await SenangPayService.login(req.ip ?? '', payload);
 
     return res.status(200).json(loginResult);
   } catch (err) {

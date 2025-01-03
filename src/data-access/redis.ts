@@ -4,7 +4,7 @@ let redis: Redis | null = null;
 
 const KEY_EXPIRY_TTL = 60 * 5; // 5 minutes
 
-if (process.env.USE_REDIS) {
+if (process.env.USE_REDIS === 'true') {
   redis = new Redis({
     port: +(process.env.REDIS_PORT || 6379),
     host: '127.0.0.1',

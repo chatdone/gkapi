@@ -54,16 +54,27 @@ const notifyTaskUpdated = async (input: {
     if (!sockets) {
       return;
     }
-
     const filteredSockets = sockets.filter((s) => {
-      const socketUserCompanyIds = _.get(s.data.user, 'companyIds');
-      const socketUserId = _.get(s.data.user, 'id');
+    // const socketUserCompanyIds = _.get(s.data.user, 'companyIds');
+    const socketUserCompanyIds = _.get(s.data.user, 'companyIds') as unknown as (CompanyId | null)[];
+    const socketUserId = _.get(s.data.user, 'id') ?? 0;
+    // const socketUserId = _.get(s.data.user, 'id');
 
-      return (
-        socketUserCompanyIds.includes(companyId) ||
-        picUserIds.includes(socketUserId)
-      );
-    });
+  return (
+    (socketUserCompanyIds && socketUserCompanyIds.includes(companyId)) ||
+    picUserIds.includes(socketUserId)
+  );
+});
+
+    // const filteredSockets = sockets.filter((s) => {
+    //   const socketUserCompanyIds = _.get(s.data.user, 'companyIds');
+    //   const socketUserId = _.get(s.data.user, 'id');
+
+    //   return (
+    //     socketUserCompanyIds.includes(companyId) ||
+    //     picUserIds.includes(socketUserId)
+    //   );
+    // });
 
     _.forEach(filteredSockets, (socket) => {
       socket.emit('task:update', task.idText);

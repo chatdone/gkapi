@@ -63,30 +63,59 @@ type LoggerStripeError = {
   source: any;
 };
 
+// const CloudWatchBaseOptions = {
+//   logStreamName: dayjs().format('YYYY/MM/DD'),
+//   awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
+//   awsSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
+//   awsRegion: 'ap-southeast-1',
+//   jsonMessage: true,
+//   cloudWatchLogs: new AWS.CloudWatchLogs({ region: 'ap-southeast-1' }),
+// };
 const CloudWatchBaseOptions = {
   logStreamName: dayjs().format('YYYY/MM/DD'),
   awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
   awsSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
   awsRegion: 'ap-southeast-1',
   jsonMessage: true,
-  cloudWatchLogs: new AWS.CloudWatchLogs({ region: 'ap-southeast-1' }),
 };
 
+// const commonLogger = winston.createLogger({
+//   level: 'info',
+//   format: winston.format.json(),
+//   defaultMeta: { service: 'dashboard-api', environment: process.env.NODE_ENV },
+//   transports: [
+//     new WinstonCloudWatch({
+//       ...CloudWatchBaseOptions,
+//       name: 'common',
+//       logGroupName:
+//         process.env.CLOUDWATCH_LOG_GROUP ||
+//         `/api/gokudos-api/${process.env.NODE_ENV}/common`,
+//     }),
+//   ],
+// });
 const commonLogger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
   defaultMeta: { service: 'dashboard-api', environment: process.env.NODE_ENV },
   transports: [
     new WinstonCloudWatch({
-      ...CloudWatchBaseOptions,
       name: 'common',
       logGroupName:
         process.env.CLOUDWATCH_LOG_GROUP ||
         `/api/gokudos-api/${process.env.NODE_ENV}/common`,
+      logStreamName: dayjs().format('YYYY/MM/DD'),
+      awsAccessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      awsSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
+      awsRegion: 'ap-southeast-1',
+      jsonMessage: true,
     }),
   ],
 });
-
+// const cloudWatchLogs = new AWS.CloudWatchLogs({
+//   region: 'ap-southeast-1',
+//   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+//   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+// });
 const dedocoLogger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),

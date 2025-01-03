@@ -419,7 +419,7 @@ const handleSubscriptionQuota = async (input: {
       isOverQuota = newCount < 0;
     } else if (quotaType === 'task') {
       const count = await SubscriptionStore.getTaskCount(companyId);
-      const totalCount = isDecrement ? count + quota : count - 1;
+      const totalCount = isDecrement ? Number(count) + quota : Number(count) - 1;
       newCount = quotaLimit - totalCount;
       isOverQuota = newCount < 0;
     } else if (quotaType === 'storage') {
@@ -437,7 +437,7 @@ const handleSubscriptionQuota = async (input: {
       isOverQuota = newCount < 0;
     } else if (quotaType === 'invoice') {
       const count = await SubscriptionStore.getInvoiceCount(companyId);
-      const totalCount = isDecrement ? count + quota : count;
+      const totalCount = isDecrement ? Number(count) + quota : Number(count);
       newCount = quotaLimit - totalCount;
       isOverQuota = newCount < 0;
     }
@@ -849,6 +849,7 @@ const updateSubscriptionQuota = async (input: {
     const numberOfTeams = await SubscriptionStore.getCompanyTeamCount(
       companyId,
     );
+    
     const numberOfTasks = await SubscriptionStore.getTaskCount(companyId);
 
     const invoiceQuotaToAdd = isInvoiceQuotaUnlimited
@@ -873,7 +874,7 @@ const updateSubscriptionQuota = async (input: {
 
     const taskQuotaToAdd = isTaskQuotaUnlimited
       ? -1
-      : newTaskQuota - numberOfTasks;
+      : newTaskQuota - Number(numberOfTasks);
 
     const res = await SubscriptionStore.updateSubscriptionQuota({
       companyId,
