@@ -35,6 +35,8 @@ const corsOrigins = [
   'https://neo.staging.gokudos.io',
   'https://app.gokudos.io',
   'https://admin.gokudos.io',
+  'https://gk-api.vercel.app',
+  'https://gkweb.vercel.app',
 ];
 
 const startServer = async () => {
