@@ -1,1 +1,1 @@
-{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/graphql" }] }
+{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "server.js" }] }
