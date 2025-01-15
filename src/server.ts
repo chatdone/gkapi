@@ -40,7 +40,7 @@ const corsOrigins = [
 ];
 
 const startServer = async () => {
-  const PORT = process.env.SERVER_PORT || 5000;
+  const PORT = process.env.SERVER_PORT || 3000;
 
   const server = new ApolloServer({
     schema,
