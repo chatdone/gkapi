@@ -37,6 +37,8 @@ const corsOrigins = [
   'https://admin.gokudos.io',
   'https://gk-api.vercel.app',
   'https://gkweb.vercel.app',
+  'https://gkapi.chatdone.my',
+  'https://gkweb.chatdone.my',
 ];
 
 const startServer = async () => {
