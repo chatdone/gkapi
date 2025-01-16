@@ -19,6 +19,6 @@ dist
 coverage
 deploy.sh
 
-
+.vercel
 user-scripts
 *.swp
